@@ -136,6 +136,11 @@
 
 
 
+.single > #nextButton,
+.single > #prevButton{
+    display:none;
+}
+
 
 
 #nextButton, #prevButton{

@@ -13,11 +13,11 @@
         <div id="info">
             <div id="facsimile">
                 <figure class="thumb"><div onclick="javascript:startViewer(this)"><img src="https://winnifredeatonarchive.github.io/wea/facsimiles/Li_Chings_Baby.png"
-                        alt="First page of facsimile" /><div class="imageText portrait">
-                            <h4>View Facsimile</h4>
-                            <div class="pdfSize">1.3 MB</div>
-                        </div></div>
-                
+                    alt="First page of facsimile" /><div class="imageText portrait">
+                        <h4>View Facsimile</h4>
+                        <div class="pdfSize">1.3 MB</div>
+                    </div></div>
+                    
                 </figure>
                 
                 <div id="galleryDiv">
@@ -27,7 +27,7 @@
                         <div class="material-icons"  id="gallery_fullScreen">fullscreen</div>
                         <div class="material-icons"  id="gallery_close">close</div>
                     </div>
-                    <div id="gallery_viewer" class="single">
+                    <div id="gallery_viewer" class="multi">
                         <div class="material-icons" id="prevButton">chevron_left</div>
                         <!--Should not have to keep open but where-->
                         <div class="material-icons" id="nextButton">chevron_right</div>
@@ -39,7 +39,7 @@
                     <div class="breadcrumb metadataLabel">
                         <a href="EarlyExperiment.html">Early Experiments</a>
                     </div>
-                    <h2>Her Japanese Lover</h2>
+                    <h2>Li Ching's Baby</h2>
                 </div>
                 <div id="metadata">
                     <div>
@@ -164,7 +164,7 @@
         
         
         
-     <script type="text/javascript">
+        <script type="text/javascript">
       
   
   
@@ -202,8 +202,11 @@
       function initViewer(){
       var mainViewer = OpenSeadragon({
         id:            'viewer',
-        tileSources: ["tiles/Her_Japanese_Lover/Her_Japanese_Lover_1.dzi"],
-        sequenceMode: false,
+        tileSources: ["tiles/Li_Chings_Baby/Li_Chings_Baby_1.dzi",
+        "tiles/Li_Chings_Baby/Li_Chings_Baby_2.dzi",
+        "tiles/Li_Chings_Baby/Li_Chings_Baby_3.dzi"
+        ],
+        sequenceMode: true,
      zoomInButton:   "gallery_zoomIn",
     zoomOutButton:  "gallery_zoomOut",
     fullPageButton: "gallery_fullScreen",
