@@ -152,6 +152,11 @@
     margin-left:-.5rem;
 }
 
+
+#nextButton:hover, #prevButton:hover{
+    color:white;
+}
+
 #nextButton{
     left:80%;
 }

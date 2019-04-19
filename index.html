@@ -190,7 +190,11 @@
       /*This is a hacky sort of workaround to stop setting custom styles to the next/prev buttons*/
       
       document.getElementById('nextButton').removeAttribute('style');
+      
+      /*However, I need to add the opacity back in for the prev button, of course*/
+      
       document.getElementById('prevButton').removeAttribute('style');
+      document.getElementById('prevButton').setAttribute('style','opacity:0.2');
       
       }
       
