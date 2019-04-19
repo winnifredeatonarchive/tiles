@@ -2,43 +2,228 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Test Document for Tiles</title>
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="https://winnifredeatonarchive.github.io/wea/css/wea.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="tiles.css"/>
         <script src="tiles.js"><!----></script>
         <script src="osd/openseadragon.min.js"><!----></script>
     </head>
-    <body>
+    <body id="mainBody" class="docPrimarySource">
         <h2>Tests</h2>
-        
-        
-        <div class="lightbox" id="lightbox">
-            
-            <div id="viewer"><!--Viewer info--></div>
-            <div id="nav">
-              <div id="zoom-in">ZOOM IN</div>
-              <div id="zoom-out">ZOOM OUT</div>
-              <div id="home">ZOOM 0</div>
-              <div id="full-page">FULL</div>
-              <div id="next">NEXT PAGE</div>
-              <div id="previous">PREVIOUS PAGE</div>
+        <div id="info">
+            <div id="facsimile">
+                <figure class="thumb"><div onclick="javascript:startViewer(this)"><img src="https://winnifredeatonarchive.github.io/wea/facsimiles/Li_Chings_Baby.png"
+                        alt="First page of facsimile" /><div class="imageText portrait">
+                            <h4>View Facsimile</h4>
+                            <div class="pdfSize">1.3 MB</div>
+                        </div></div>
+                
+                </figure>
+                
+                <div id="galleryDiv">
+                    <div id="gallery_nav">
+                        <div  class="material-icons"  id="gallery_zoomIn">zoom_in</div>
+                        <div  class="material-icons"  id="gallery_zoomOut">zoom_out</div>
+                        <div class="material-icons"  id="gallery_fullScreen">fullscreen</div>
+                        <div class="material-icons"  id="gallery_close">close</div>
+                    </div>
+                    <div id="gallery_viewer">
+                        <div class="material-icons" id="prevButton">chevron_left</div>
+                        <!--Should not have to keep open but where-->
+                        <div class="material-icons" id="nextButton">chevron_right</div>
+                    </div>
+                </div>
+            </div>
+            <div id="metadata_container">
+                <div id="title">
+                    <div class="breadcrumb metadataLabel">
+                        <a href="EarlyExperiment.html">Early Experiments</a>
+                    </div>
+                    <h2>Li Ching’s Baby</h2>
+                </div>
+                <div id="metadata">
+                    <div>
+                        <div class="metadataLabel">Author</div>
+                        <div>
+                            <a href="#WE1" data-el="name" data-ref="#WE1">Onoto Watanna</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Publisher</div>
+                        <div>
+                            <a href="#CartersMonthly" data-el="name" data-ref="#CartersMonthly">Carter’s
+                                Monthly</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Volume</div>
+                        <div>8</div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Issue</div>
+                        <div>4</div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Date</div>
+                        <div>Apr. 1898</div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Page Range</div>
+                        <div>401-403</div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Document Type</div>
+                        <div>
+                            <a href="docPrimarySourcePublished.html">Published Primary Sources</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Genre</div>
+                        <div>
+                            <a href="genreShortStory.html">Short Stories</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Exhibits</div>
+                        <div>
+                            <a href="EarlyExperiment.html">Early Experiments</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="metadataLabel">Work</div>
+                        <div>
+                            <a href="LiChingsBaby.html">Li Ching’s Baby</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="additional_info">
+                <div id="credits" class="additionalInfo expandable">
+                    <div class="metadataLabel additionalInfoHeader" id="credits_header">Credits and
+                        Citations</div>
+                    <div id="credits_content" class="content">
+                        <div data-el="respStmt">
+                            <div data-el="resp" class="metadataLabel">Author</div>
+                            <div data-el="name" data-ref="#WE1">
+                                <a href="#WE1" data-el="name" data-ref="#WE1">Winnifred Eaton</a>
+                            </div>
+                        </div>
+                        <div data-el="respStmt">
+                            <div data-el="resp" class="metadataLabel">Transcriber</div>
+                            <div data-el="name" data-ref="#KI1">
+                                <a href="#KI1" data-el="name" data-ref="#KI1">Ken Ip</a>
+                            </div>
+                        </div>
+                        <div data-el="respStmt">
+                            <div data-el="resp" class="metadataLabel">Copy Editor</div>
+                            <div data-el="name" data-ref="#SL1">
+                                <a href="#SL1" data-el="name" data-ref="#SL1">Sydney Lines</a>
+                            </div>
+                        </div>
+                        <div data-el="respStmt">
+                            <div data-el="resp" class="metadataLabel">Encoder</div>
+                            <div data-el="name" data-ref="#JT1">
+                                <a href="#JT1" data-el="name" data-ref="#JT1">Joey Takeda</a>
+                            </div>
+                        </div>
+                        <div id="source_citation">
+                            <div class="metadataLabel">Source Citation</div>
+                            <div data-el="bibl" class="bibl" data-copyOf="bibliography.xml#bibl71"
+                                >Watanna, Onoto. <span data-el="title" data-level="a">Li Ching’s
+                                    Baby.</span>
+                                <span data-el="title" data-level="j">Carter’s Monthly</span>, vol. 8,
+                                iss. 4, Apr. 1898, pp. 401-403.</div>
+                        </div>
+                        <div id="this_citation">
+                            <div class="metadataLabel">Cite this Page</div>
+                            <div data-el="bibl" class="bibl">Watanna, Onoto. <span data-el="title"
+                                data-level="a">Li Ching’s Baby.</span>
+                                <span data-el="title" data-level="j">Carter’s Monthly</span>, vol. 8,
+                                iss. 4, Apr. 1898, pp. 401-403. <span data-el="title" data-level="m">The
+                                    Winnifred Eaton Archive</span>, edited by Mary Chapman and Jean Lee
+                                Cole, U of British Columbia.</div>
+                        </div>
+                        <div id="xmlVersions">
+                            <div class="metadataLabel">Download XML</div>
+                            <div>
+                                <div data-el="list">
+                                    <div data-el="item"><a href="xml/original/LiChingsBaby1.xml"
+                                        data-el="ref" data-target="xml/original/LiChingsBaby1.xml"
+                                        >Original XML</a> (16 kB)</div>
+                                    <div data-el="item"><a href="xml/standalone/LiChingsBaby1.xml"
+                                        data-el="ref" data-target="xml/standalone/LiChingsBaby1.xml"
+                                        >Standalone XML</a> (16 kB)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
         
         
+        
      <script type="text/javascript">
-         
+      
+  
+  
+  
+    
+      
+      
+      function startViewer(e){
+        
+        var viewerDiv = document.createElement('div');
+        viewerDiv.setAttribute('id', 'viewer');
+        var facsDiv = document.getElementById('gallery_viewer');
+        document.getElementById('info').classList.add('osd');
+        var nextB = document.getElementById('nextButton');
+        facsDiv.insertBefore(viewerDiv, nextB);
+        initViewer();
+      
+      
+        var galClose = document.getElementById('gallery_close');
+        
+        galClose.addEventListener('click',closeViewer,true);
+      
+      /*This is a hacky sort of workaround to stop setting custom styles to the next/prev buttons*/
+      
+      document.getElementById('nextButton').removeAttribute('style');
+      document.getElementById('prevButton').removeAttribute('style');
+      
+      }
+      
+      
+      function initViewer(){
       var mainViewer = OpenSeadragon({
         id:            'viewer',
-        tileSources: "tiles/Her_Japanese_Lover/Her_Japanese_Lover_1.dzi",
-        toolbar: "nav",
+        tileSources: ["tiles/Li_Chings_Baby/Li_Chings_Baby_1.dzi",
+        "tiles/Li_Chings_Baby/Li_Chings_Baby_2.dzi",
+        "tiles/Li_Chings_Baby/Li_Chings_Baby_3.dzi"],
         sequenceMode: true,
-         zoomInButton:   "zoom-in",
-    zoomOutButton:  "zoom-out",
-    homeButton:     "home",
-    fullPageButton: "full-page",
-    nextButton:     "next",
-    previousButton: "previous",
+     zoomInButton:   "gallery_zoomIn",
+    zoomOutButton:  "gallery_zoomOut",
+    fullPageButton: "gallery_fullScreen",
+     nextButton:     "nextButton",
+    previousButton: "prevButton",
+    toolbar: "gallery_nav",
+    showNavigator: "true",
+    controlsFadeDelay: 1000,
       });
+   mainViewer.addHandler('open', function() {
+    mainViewer.viewport.zoomTo(0.1, null, false);
+    mainViewer.viewport.applyConstraints();
+    });
+      }
+      
+      function closeViewer(){
+        document.getElementById('info').classList.remove('osd');
+        var view = document.getElementById('viewer');
+        view.parentNode.removeChild(view);
+        
+        
+      }
     </script>
         
     </body>

@@ -1,4 +1,41 @@
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+    url(iconfont/MaterialIcons-Regular.woff) format('woff'),
+    url(iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
 
 #lightbox{
     
@@ -12,6 +49,111 @@
     height:100%;
     width:100%;
     margin:1em;
-    background:black;
+
     margin:0 auto;
 }
+
+
+#mainBody[class*="docPrimarySource"] > #info.osd{
+     display:grid;
+      grid-template-areas:
+      "facsimile facsimile facsimile facsimile"
+      "facsimile facsimile facsimile facsimile"
+      "metadata_container metadata_container metadata_container metadata_container"
+      "additional_info additional_info additional_info additional_info";
+      
+      grid-template-columns: minmax(8rem, 18rem) 58% 1fr 1fr;
+      grid-column-gap:1.5rem;
+      grid-row-gap:1.5rem;
+}
+
+#info.osd > #facsimile{
+    
+    width:100%;
+    height:38rem;
+    display:block;
+}
+
+#viewer{
+}
+
+#toolbar{
+    padding:2rem 0;
+    display:block;
+}
+#info.osd > #facsimile > figure{display:none;}
+
+
+#info:not(.osd) #galleryDiv{display:none;}
+
+#info.osd #galleryDiv{
+    width:100%;
+    height:35rem; 
+}
+
+#gallery_nav{
+    display:flex;
+}
+
+#gallery_viewer{
+    height:100%;
+    width:100%;
+    background:black;
+}
+
+#prevButton{
+    grid-area: prevButton;
+}
+
+#nextButton{
+    grid-area: nextButton;
+}
+
+#viewer{
+    grid-area:viewer;
+}
+
+
+
+#gallery_nav > div{
+    background:grey;
+    border: 1px solid black;
+}
+
+#gallery_zoomIn{
+    grid-area: gallery_zoomIn;
+}
+
+#gallery_zoomOut{
+    grid-area: gallery_zoomOut;
+}
+#gallery_fullScreen{
+    grid-area: gallery_fullScreen;
+}
+#gallery_close{
+    grid-area: gallery_close;
+}
+
+
+
+
+
+#nextButton, #prevButton{
+    color:#dedede;
+    font-size:400%;
+    position: absolute;
+    display: block;
+    line-height: 0;
+    cursor: pointer;
+    top:32rem;
+    padding: 0;
+    border: none;
+    z-index:200;
+    margin-left:-.5rem;
+}
+
+#nextButton{
+    left:80%;
+}
+
+
