@@ -2,11 +2,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Test Document for Tiles</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="tiles.css"/>
+        <script src="tiles.js"><!----></script>
+        <script src="osd/openseadragon.min.js"><!----></script>
     </head>
     <body>
         <h2>Tests</h2>
         
         
+        <div class="lightbox" id="lightbox">
+            
+            <div id="viewer"><!--Viewer info--></div>
+            <div id="nav">
+              <div id="zoom-in">ZOOM IN</div>
+              <div id="zoom-out">ZOOM OUT</div>
+              <div id="home">ZOOM 0</div>
+              <div id="full-page">FULL</div>
+              <div id="next">NEXT PAGE</div>
+              <div id="previous">PREVIOUS PAGE</div>
+            </div>
+        </div>
+        
+        
+        
+     <script type="text/javascript">
+         
+      var mainViewer = OpenSeadragon({
+        id:            'viewer',
+        tileSources: "tiles/Her_Japanese_Lover/Her_Japanese_Lover_1.dzi",
+        toolbar: "nav",
+        sequenceMode: true,
+         zoomInButton:   "zoom-in",
+    zoomOutButton:  "zoom-out",
+    homeButton:     "home",
+    fullPageButton: "full-page",
+    nextButton:     "next",
+    previousButton: "previous",
+      });
+    </script>
         
     </body>
 </html>
