@@ -223,13 +223,21 @@
     mainViewer.viewport.zoomTo(0.1, null, false);
     mainViewer.viewport.applyConstraints();
     });
+    var galClose = document.getElementById('gallery_close');
+  galClose.addEventListener('click',function close(){
+        closeViewer(mainViewer)},true);
+
       }
       
-      function closeViewer(){
+       function closeViewer(viewer){
         document.getElementById('info').classList.remove('osd');
+        viewer.destroy();
+        viewer = null;
         var view = document.getElementById('viewer');
+        var galClose = document.getElementById('gallery_close');
+        galClose.removeEventListener('click', close, true);
         view.parentNode.removeChild(view);
-                document.getElementById('info').scrollIntoView();
+        document.getElementById('info').scrollIntoView();
         
       }
     </script>
