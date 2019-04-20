@@ -229,7 +229,7 @@
         document.getElementById('info').classList.remove('osd');
         var view = document.getElementById('viewer');
         view.parentNode.removeChild(view);
-        
+                document.getElementById('info').scrollIntoView({behavior:'smooth'});
         
       }
     </script>
