@@ -184,9 +184,10 @@
         /*Note that this will ALWAYS be in the bottom of the page in question*/
         initViewer();
         
-        
+             
         /*Now scroll to it*/
-        document.getElementById('facsimile').scrollIntoView();
+        /*This is nice when it's smooth*/
+        document.getElementById('facsimile').scrollIntoView({behavior: 'smooth'});
         var galClose = document.getElementById('gallery_close');
         
         galClose.addEventListener('click',closeViewer,true);
