@@ -180,9 +180,13 @@
         document.getElementById('info').classList.add('osd');
         var nextB = document.getElementById('nextButton');
         facsDiv.insertBefore(viewerDiv, nextB);
+        
+        /*Note that this will ALWAYS be in the bottom of the page in question*/
         initViewer();
-      
-      
+        
+        
+        /*Now scroll to it*/
+        document.getElementById('facsimile').scrollIntoView();
         var galClose = document.getElementById('gallery_close');
         
         galClose.addEventListener('click',closeViewer,true);

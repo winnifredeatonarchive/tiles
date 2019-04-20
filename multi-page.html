@@ -181,7 +181,10 @@
         var nextB = document.getElementById('nextButton');
         facsDiv.insertBefore(viewerDiv, nextB);
         initViewer();
-      
+              
+        /*Now scroll to it*/
+        document.getElementById('facsimile').scrollIntoView();
+        
       
         var galClose = document.getElementById('gallery_close');
         
