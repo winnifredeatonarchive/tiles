@@ -117,7 +117,12 @@
 
 #gallery_nav > div{
     background:grey;
-    border: 1px solid black;
+
+    cursor:pointer;
+}
+
+#gallery_nav > div:hover{
+    outline: 1px solid black;
 }
 
 #gallery_zoomIn{
